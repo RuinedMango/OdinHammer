@@ -1,9 +1,16 @@
 package main
 
-import "core:fmt"
 import SDL "vendor:sdl2"
 
 main :: proc() {
-	fmt.println("Hellope!")
-    sdl_init_error := SDL.Init()
+    sdl_init_error := SDL.Init(SDL.INIT_VIDEO)
+    assert(sdl_init_error == 0, SDL.GetErrorString())
+    defer SDL.Quit()
+
+    window := SDL.CreateWindow("UWU", SDL.WINDOWPOS_CENTERED, SDL.WINDOWPOS_CENTERED, 1024, 960, SDL.WINDOW_RESIZABLE)
+    SDL.SetWindowOpacity(window, 0.5)
+    assert(window != nil, SDL.GetErrorString())
+    defer SDL.DestroyWindow(window)
+
+    SDL.Delay(3000)
 }
