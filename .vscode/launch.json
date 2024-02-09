@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/<executable file>",
-            "args": [],
+            "program": "odin",
+            "args": ["run", "${workspaceFolder}\\src\\main.odin", "-file"],
             "cwd": "${workspaceFolder}"
         }
     ]
