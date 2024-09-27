@@ -8,4 +8,14 @@ main :: proc() {
 
 	rl.InitWindow(screenWidth, screenHeight, "RaylibTest");
 	defer rl.CloseWindow()
+
+	rl.SetTargetFPS(60)
+
+	for !rl.WindowShouldClose(){
+		rl.BeginDrawing()
+		defer rl.EndDrawing()
+
+		rl.ClearBackground(rl.RAYWHITE)
+		rl.DrawText("YAY:)", 190, 200, 20, rl.LIGHTGRAY)
+	}
 }
