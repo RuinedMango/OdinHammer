@@ -17,5 +17,6 @@ main :: proc() {
 
 		rl.ClearBackground(rl.RAYWHITE)
 		rl.DrawText("YAY:)", 190, 200, 20, rl.LIGHTGRAY)
+		rl.DrawFPS(50, 50)
 	}
 }
